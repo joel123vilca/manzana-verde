@@ -3,61 +3,39 @@ export default {
   data() {
     return {
       isActive: true,
-      dates: [
-        {
-          title: "Lun",
-          num: 29,
-          select: false,
-          active: true
-        },
-        {
-          title: "Mar",
-          num: 30,
-          select: true,
-          active: false
-        },
-        {
-          title: "Mie",
-          num: "01",
-          select: false,
-          active: false
-        },
-        {
-          title: "Jue",
-          num: "02",
-          select: false,
-          active: false
-        },
-        {
-          title: "Vie",
-          num: "03",
-          select: false,
-          active: false
-        }
-      ]
+      dialog: false
     };
   },
   computed: {
     ...mapState({
-      listMain: state => state.listMain
+      listMain: state => state.listMain,
+      dates: state => state.dates,
+      date: state => state.date
     })
   },
   methods: {
     ...mapActions({
-      deleteFood: "DELETE_FOOD"
+      deleteFood: "DELETE_FOOD",
+      changeDate: "CHANGE_DATE"
     }),
     filterFood(id, foodId) {
       this.deleteFood({ id, foodId });
     },
+    openDialog() {
+      this.dialog = !this.dialog;
+    },
     selectDate(index) {
-      this.dates = this.dates.map((item, i) => {
+      let date = {};
+      let dates = this.dates.map((item, i) => {
         if (i == index) {
           item.active = true;
+          date = item;
         } else {
           item.active = false;
         }
         return item;
       });
+      this.changeDate({ dates: dates, date: date });
     }
   }
 };

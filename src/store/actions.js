@@ -4,23 +4,43 @@ export default {
     commit("REPLACE_FOOD_SELECTED", { food });
   },
   DELETE_FOOD({ state, commit }, payload) {
-    let list = state.listMain;
-    let newList = list.map(item => {
+    let date = state.date;
+    let dates = state.dates;
+    let newList = date.listMain.map(item => {
       if (item.id === payload.id) {
         item.foodsAsign = item.foodsAsign.filter(food => food.id != payload.foodId);
       }
       return item;
     });
-    commit("REPLACE_NEW_LIST", { newList });
+    let newDates = dates.map(element => {
+      if (element.id === date.id) {
+        element.listMain = newList;
+        element.select = newList[1].foodsAsign.length == 0 ? false : true;
+      }
+      return element;
+    });
+    commit("REPLACE_NEW_LIST", { newDates });
   },
   ADD_FOOD({ state, commit }, payload) {
-    let list = state.listMain;
-    let newList = list.map(item => {
+    let date = state.date;
+    let dates = state.dates;
+    let newList = date.listMain.map(item => {
       if (item.id === 2) {
         item.foodsAsign.push(payload);
       }
       return item;
     });
-    commit("REPLACE_NEW_LIST", { newList });
+    let newDates = dates.map(element => {
+      if (element.id === date.id) {
+        element.listMain = newList;
+        element.select = newList[1].foodsAsign.length == 0 ? false : true;
+      }
+      return element;
+    });
+    commit("REPLACE_NEW_LIST", { newDates });
+  },
+  CHANGE_DATE({ state, commit }, payload) {
+    commit("REPLACE_DATE", payload);
+    commit("CHANGE_DATE", payload);
   }
 };

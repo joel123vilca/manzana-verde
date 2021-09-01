@@ -6,7 +6,7 @@
       <div class="icon" @click="changeLike"><img :src="require(`@/assets/${icon}`)" /></div>
     </div>
     <div class="food__info">
-      <div class="food__image">
+      <div class="food__image" @click="openDialog">
         <img :src="require('@/assets/food.png')" alt="food image" />
       </div>
       <div class="food__data">
@@ -79,4 +79,4 @@
   </div>
 </template>
 <script src="./food.js"></script>
-<style src="./food.scss" scoped lang="scss"></style>
+<style src="./food.scss" lang="scss"></style>

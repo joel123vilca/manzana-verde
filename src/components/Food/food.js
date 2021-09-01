@@ -1,4 +1,4 @@
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapState } from "vuex";
 
 export default {
   data() {
@@ -9,7 +9,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({ food: "food" })
+    ...mapGetters({ food: "food" }),
+    ...mapState({
+      date: state => state.date
+    })
   },
   created() {
     this.getFood({ id: this.$route.params.id });
@@ -29,6 +32,9 @@ export default {
         value: this.food.kcal
       });
       this.$router.push({ name: "Home" });
+    },
+    openDialog() {
+      this.dialog = !this.dialog;
     }
   }
 };

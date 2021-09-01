@@ -21,7 +21,7 @@
         <p>Av. Mariscal Ramon Castilla</p>
       </div>
     </div>
-    <div v-for="(item, index) in listMain" :key="index">
+    <div v-for="(item, index) in date.listMain" :key="index">
       <div
         v-if="item.foodsAsign.length === 0"
         class="home__lunch"
@@ -47,7 +47,7 @@
       </div>
       <div v-else class="food__list" :class="{ desactive: !item.active }">
         <div v-for="food in item.foodsAsign" :key="food.id" class="food__item">
-          <div class="food__image">
+          <div class="food__image" @click="openDialog">
             <img :src="require('@/assets/food.png')" alt="food image" />
           </div>
           <div
@@ -67,6 +67,9 @@
         </div>
       </div>
     </div>
+    <el-dialog :visible.sync="dialog" width="90%" center>
+      <img class="dialog__image" :src="require('@/assets/food.png')" alt="food image" />
+    </el-dialog>
   </div>
 </template>
 <script src="./list.js"></script>
