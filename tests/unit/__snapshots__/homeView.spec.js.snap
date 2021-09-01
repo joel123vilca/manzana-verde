@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home view renders the component 1`] = `
+<div>
+  <header-stub></header-stub>
+  <main-stub></main-stub>
+</div>
+`;

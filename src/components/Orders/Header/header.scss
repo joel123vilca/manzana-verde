@@ -1,0 +1,52 @@
+.orders__header {
+  height: 100px;
+  border-bottom: 2px solid #e8e8e8;
+  .header__profile {
+    display: flex;
+    justify-content: space-between;
+    .profile__avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid black;
+      img {
+        width: 100%;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+    }
+    .profile__title {
+      size: 20px;
+      color: #606060;
+      font-style: normal;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .profile__count {
+      width: 40px;
+      height: 40px;
+    }
+    .profile__status {
+      width: 85px;
+      height: 30px;
+      margin-left: 10px;
+    }
+    .profile__notification {
+      width: 50px;
+      height: 30px;
+      margin-left: 10px;
+    }
+  }
+  .header__info {
+    display: flex;
+    padding: 10px 0 0 10px;
+    justify-content: space-between;
+  }
+  .progress {
+    padding-top: 0px;
+  }
+}

@@ -1,0 +1,156 @@
+.home {
+  padding: 10px;
+  .dates {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #e8e8e8;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    .date {
+      width: 60px;
+      height: 55px;
+      border-radius: 10px;
+      background-color: white;
+      padding-top: 5px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: #c9c9c9;
+      cursor: pointer;
+      .number {
+        height: 25px;
+        width: 25px;
+        h3 {
+          margin-top: 0px;
+        }
+      }
+      .select {
+        border-bottom: 2px solid #35b266;
+      }
+    }
+    .active {
+      background-color: #ffd538;
+      color: #606060;
+    }
+  }
+  .address {
+    display: flex;
+    align-content: center;
+    border-bottom: 2px solid #e8e8e8;
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-left: 10px;
+    }
+    span {
+      font-weight: 700;
+    }
+    p {
+      margin-top: 0px;
+    }
+  }
+  .home__lunch {
+    margin-top: 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    .lunch__icon {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+    }
+    .lunch__description {
+      width: 140px;
+      height: 30px;
+      margin-left: 5px;
+      span {
+        color: #35b266;
+        size: 12px;
+      }
+      .title {
+        color: #606060;
+      }
+      p {
+        margin-top: 0px;
+        color: #a9a9a9;
+        size: 10px;
+      }
+    }
+    .lunch__action {
+      width: 180px;
+      margin-left: 30px;
+      .add {
+        width: 130px;
+        height: 40px;
+        size: 15px;
+        border: 1px solid #ffd538;
+        background: #ffd538;
+        color: #606060;
+        border-radius: 10px;
+      }
+      span {
+        margin-top: 10px;
+        color: #a9a9a9;
+        font-size: 15px;
+      }
+    }
+  }
+  .desactive {
+    background-color: #fafafa;
+  }
+  .food__list {
+    margin-top: 10px;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    .food__item:first-child {
+      border-top: 0px solid #e8e8e8;
+    }
+    .food__item {
+      height: 90px;
+      display: flex;
+      margin: 0 10px 0 10px;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #e8e8e8;
+      .food__image {
+        margin-top: 10px;
+        img {
+          border-radius: 5px;
+          width: 70px;
+          height: 60px;
+          object-fit: cover;
+        }
+      }
+      .food__description {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        span {
+          color: #35b266;
+          size: 12px;
+        }
+        p {
+          margin-top: 0px;
+          color: #a9a9a9;
+          size: 10px;
+        }
+      }
+      .food__action {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .home {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-gap: 50px;
+  }
+}
